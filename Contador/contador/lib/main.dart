@@ -34,12 +34,20 @@ class _MyHomePageState extends State<MyHomePage> {
   void _incrementCounter() {
     setState(() {
       _counter++;
+
+      if (_counter > 20) {
+        _decrementCounter();
+      }
     });
   }
 
   void _decrementCounter() {
     setState(() {
       _counter--;
+
+      if (_counter < 0) {
+        _incrementCounter();
+      }
     });
   }
 
@@ -59,8 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(
                   'CONTADOR DA MAIS MAIS:',
                   style: TextStyle(
-                    color: Colors.white,
-                  ),
+                      color: Colors.white, backgroundColor: Colors.black),
                 ),
                 Text(
                   '$_counter',
@@ -69,14 +76,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(
+                    TextButton(
                       onPressed: _incrementCounter,
-                      child: const Icon(Icons.add),
+                      child: const Text('ADICIONAR'),
+                      style: ButtonStyle(
+                          foregroundColor:
+                              WidgetStateProperty.all(Colors.black),
+                          backgroundColor:
+                              WidgetStateProperty.all(Colors.white)),
                     ),
-                    ElevatedButton(
+                    TextButton(
                       onPressed: _decrementCounter,
-                      child: const Icon(Icons.remove),
-                    ),
+                      child: const Text('SUBTRAIR'),
+                      style: ButtonStyle(
+                        foregroundColor: WidgetStateProperty.all(Colors.black),
+                        backgroundColor: WidgetStateProperty.all(Colors.white),
+                      ),
+                    )
                   ],
                 )
               ],
