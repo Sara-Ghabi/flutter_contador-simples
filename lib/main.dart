@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(
+                const Text(
                   'CONTADOR DA MAIS MAIS:',
                   style: TextStyle(
                       color: Colors.white, backgroundColor: Colors.black),
@@ -78,20 +78,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     TextButton(
                       onPressed: _incrementCounter,
-                      child: const Text('ADICIONAR'),
                       style: ButtonStyle(
                           foregroundColor:
                               WidgetStateProperty.all(Colors.black),
                           backgroundColor:
                               WidgetStateProperty.all(Colors.white)),
+                      child: const Text('ADICIONAR'),
                     ),
                     TextButton(
                       onPressed: _decrementCounter,
-                      child: const Text('SUBTRAIR'),
                       style: ButtonStyle(
                         foregroundColor: WidgetStateProperty.all(Colors.black),
                         backgroundColor: WidgetStateProperty.all(Colors.white),
                       ),
+                      child: const Text('SUBTRAIR'),
                     )
                   ],
                 )
